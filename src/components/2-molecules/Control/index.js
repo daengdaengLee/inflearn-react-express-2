@@ -3,6 +3,14 @@ import PropTypes from 'prop-types';
 import Row from '../../1-atoms/Row';
 import Button from '../../1-atoms/Button';
 
+function setRandomColor() {
+  return [
+    Math.floor((Math.random() * 55) + 200),
+    Math.floor((Math.random() * 55) + 200),
+    Math.floor((Math.random() * 55) + 200),
+  ];
+}
+
 const Control = ({
   onClickIncrement,
   onClickDecrement,
@@ -10,31 +18,18 @@ const Control = ({
 }) => {
   return (
     <Row>
-      {
-        [
-          {
-            id: 1,
-            func: onClickIncrement,
-            name: '+',
-          },
-          {
-            id: 2,
-            func: onClickDecrement,
-            name: '-',
-          },
-          {
-            id: 3,
-            func: onClickRandomizeColor,
-            name: 'random color',
-          },
-        ].map(button => (
-          <Button
-            key={button.id}
-            onClick={button.func} >
-            {button.name}
-          </Button>
-        ))
-      }
+      <Button
+        onClick={onClickIncrement} >
+        +
+      </Button>
+      <Button
+        onClick={onClickDecrement} >
+        -
+      </Button>
+      <Button
+        onClick={() => onClickRandomizeColor(setRandomColor())} >
+        random color
+      </Button>
     </Row>
   );
 };
