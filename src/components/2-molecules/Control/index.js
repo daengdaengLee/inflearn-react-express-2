@@ -4,7 +4,7 @@ import Row from '../../1-atoms/Row';
 import Button from '../../1-atoms/Button';
 
 const Control = ({
-  onClickIncreament,
+  onClickIncrement,
   onClickDecrement,
   onClickRandomizeColor,
 }) => {
@@ -14,7 +14,7 @@ const Control = ({
         [
           {
             id: 1,
-            func: onClickIncreament,
+            func: onClickIncrement,
             name: '+',
           },
           {
@@ -40,7 +40,7 @@ const Control = ({
 };
 
 Control.propTypes = {
-  onClickIncreament: PropTypes.func.isRequired,
+  onClickIncrement: PropTypes.func.isRequired,
   onClickDecrement: PropTypes.func.isRequired,
   onClickRandomizeColor: PropTypes.func.isRequired,
 };
